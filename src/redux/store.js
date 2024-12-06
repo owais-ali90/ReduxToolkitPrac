@@ -1,15 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import counterSlice from './features/counterSlice';
 import AuthSlice from './features/AuthSlice'
-import { persistReducer, persistStore } from 'redux-persist';
+import { persistReducer, persistStore, middleware } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import {persistReducer, persistStore, middleware} from 'redux-persist'
-// import productsSlice from './redux/features/ProductSlice'
+import productsSlice from './features/ProductSlice'
 const reducers = combineReducers({
     counter: counterSlice,
     auth: AuthSlice,
-    // products: productsSlice
+    products: productsSlice
 })
 
 const persistConfig = {

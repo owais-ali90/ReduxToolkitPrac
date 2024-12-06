@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Login from '../screens/Login'
 import Counter from '../screens/Counter';
 import Home from '../screens/Home'
+import SingleProduct from '../screens/SingleProduct';
 
 const AppNavigation = () => {
     const Stack = createNativeStackNavigator()
@@ -16,7 +17,11 @@ const AppNavigation = () => {
         <Stack.Navigator >
             {
                 userData?
-                <Stack.Screen name='Home' component={Home} />:
+                <Stack.Group>
+                    <Stack.Screen name='Home' component={Home} />
+                    <Stack.Screen name='SingleProduct' component={SingleProduct} />
+                </Stack.Group>
+                :
                 <Stack.Screen name='Login' component={Login} />
             }
         </Stack.Navigator>
