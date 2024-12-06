@@ -13,7 +13,7 @@ const AppNavigation = () => {
     const {userData} = useSelector(state => state.auth)
   return (
     <NavigationContainer >
-        <Stack.Navigator initialRouteName='Login'>
+        <Stack.Navigator >
             {
                 userData?
                 <Stack.Screen name='Home' component={Home} />:
